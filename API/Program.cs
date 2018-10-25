@@ -1,15 +1,54 @@
-﻿using Microsoft.AspNetCore;
+﻿/*
+ * MIT License
+ * 
+ * Copyright (c) 2019 Stanislaw Schlosser <https://github.com/0x2aff>
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace API
 {
+    /// <summary>
+    ///     Entrypoint class for the application.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        ///     Entrypoint for the application.
+        ///     Invokes <see cref="CreateWebHostBuilder" />
+        /// </summary>
+        /// <param name="args">Command-line parameters.</param>
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        ///     Invokes <see cref="WebHost.CreateDefaultBuilder()" /> which creates a web application host.
+        /// </summary>
+        /// <param name="args">Command-line parameters.</param>
+        /// <returns>
+        ///     <see cref="IWebHostBuilder" />
+        /// </returns>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
